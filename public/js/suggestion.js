@@ -107,15 +107,17 @@ window.addEventListener('load', function(){
   // THIS IS WORKING, BUT IT DOESN'T UPDATE THE OBJECT
   //IT ONLY CHANGES THE TITLES
   let randomButton = document.getElementById('randomize');
+  let randomIds = document.querySelectorAll('.activityId');
+  console.log("randomIds-->", randomIds)
   console.log("here is the randomize", randomButton);
 
   randomButton.addEventListener('click', function(){
     
-
   let titlesObj =  document.querySelectorAll('.activityTitle');
+  console.log("this is the titlesObj:", titlesObj)
   var titlesInnerHTML = [];
   for (var i = 0; i < titlesObj.length; i++) {
-    titlesInnerHTML.push(titlesObj[i].innerHTML);  
+    titlesInnerHTML.push(titlesObj[i]);  
   }
   console.log(titlesInnerHTML,"titlesInnerHTML" );
 
@@ -128,10 +130,18 @@ window.addEventListener('load', function(){
       temp = this[j];
       this[j] = this[i];
       this[i] = temp;
-      console.log("titlesObj[j].innerHTML", titlesObj[j].innerHTML)
+      console.log("titlesObj[j].innerHTML", titlesObj[i])
       console.log("temp", temp)
-      titlesObj[j].innerHTML = temp
-      console.log("tempVal", temp.value)
+      let tempObj = {};
+      titlesObj[j].innerHTML = tempObj
+      tempObj.tempVal = temp.innerHTML;
+      tempObj.tempId = randomIds[j].id;
+      let url = tempObj.tempId;
+      tempObj.url = url;
+      console.log("TEMPOBJECT", tempObj)
+  var aTags = "href = /" + url
+  console.log("aTags", aTags)
+      // console.log("tempVal", temp.value)
       // alert(temp)
     }
     console.log("this is this-->", this)

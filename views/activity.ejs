@@ -55,7 +55,7 @@
 <div class="container">
 <% activities.forEach(function(activity){ %>
   <a href="activity/<%=activity._id%>"><p class="activityTitle"><%= activity.title %></p></a> 
-  <p id="activityID"><% activity._id%></p>
+  <p class="activityId" id="activity/<%=activity._id%>"></p>
   <br>
 <hr>
 <% }); %>
