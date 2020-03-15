@@ -1,0 +1,38 @@
+h1 {
+  font-size: 100px !important;
+  color: red;
+}
+
+nav{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#randomize{
+  border-radius: 5px;
+  color: white;
+  background-color: lime;
+}
+#dothething{
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  margin-left: 360px;
+  margin-top: 220px;
+  color: 
+}
+
+#activityTitle{
+  color: red;
+  margin: 200px 0 70px 26px;
+}
+.h2Heading{
+  color: purple;
+  font-size: 80px;
+  margin-left: 343px;
+}
+
+.h3Heading{
+  font-size: 40px;
+  margin-left: 343px;
+  margin-bottom: 120px;
+}
