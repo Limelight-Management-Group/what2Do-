@@ -54,12 +54,15 @@
 <h3><p class="h3Heading">Select an Activity:</p></h3>
 <div class="container">
 <% activities.forEach(function(activity){ %>
-  <a href="activity/<%=activity._id%>"><p class="activityTitle"><%= activity.title %></p></a> 
-  <p class="activityId" id="activity/<%=activity._id%>"></p>
+  <a  class="activityURL" href="activity/<%=activity._id%>"><p class="activityTitle" id="activity/<%=activity._id%>"><%= activity.title %></p></a> 
+
   <br>
 <hr>
 <% }); %>
 </div>
+
+<canvas id="canvasElement">
+</canvas>
 
 </body>
 <script type="text/javascript" src="js/suggestion.js">

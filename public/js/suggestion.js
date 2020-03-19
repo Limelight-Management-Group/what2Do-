@@ -1,114 +1,12 @@
-// let ActivitySuggestion = require('../models/suggestions')
-// console.log(ActivitySuggestion,"imported js from suggestions")
-// (function() {
-//   'use strict';
-//   window.addEventListener('load', function() {
-//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//     var forms = document.getElementsByClassName('needs-validation');
-//     console.log("this is the forms OBJ:", forms)
-//     // Loop over them and prevent submission
-//     var validation = Array.prototype.filter.call(forms, function(form) {
-//       form.addEventListener('submit', function(event) {
-// console.log("this is the validation", event)
-//         if (form.checkValidity() === false) {
-//           event.preventDefault();
-//           event.stopPropagation();
-//         }
-//         form.classList.add('was-validated');
-//       }, false);
-//     });
-//   }, false);
-// })();
-  // 'use strict';
-  // window.addEventListener('load', function() {
-  //   console.log("suggestion loaded")
-  //   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  //   var formSub = document.getElementById('suggestionsubmit');
-  //   console.log("this is the forms OBJ:", formSub)
-  //   // Loop over them and prevent submission
-  //   // var validation = Array.prototype.filter.call(forms, function(form) {
-  //     formSub.addEventListener('click', function(event) {
-  //       alert("this is the validation", event)
-  //       if (formSub.checkValidity() === false) {
-  //         event.preventDefault();
-  //         event.stopPropagation();
-  //       }
-  //       // formSub.classList.add('was-validated');
-  //     }, false);
 
-  //   // var objectToUpdate = document.getElementById('updateActivity')
-  //   // objectToUpdate.addEventListener('click', function(update){
-  //   //   console.log(" this is the event:", update)
-  //   //   alert("yup...")
-  //   // })
-  // });
-//I want to load all of the events into an array
-// var item = items[Math.floor(Math.random() * items.length)]
-// var newOrder = [];
-// let abcs = ["z","x","y","d","e","f","g"]
-// console.log("the ABC's", abcs)
-// function useSort(array){
-//    newOrder = array[Math.floor(Math.random() * array.length)]
-//   console.log('newOrder',newOrder);
-// }
-// useSort(abcs)
-// let update = []
-//   pTextArray = [];
-//   console.log('locked, cocked, and ready to rock!!');
-//   let pClass = document.getElementsByClassName('activityTitle');
-//   console.log('pclass.length--->', pClass.length)
-//   console.log('pTagsArray[0]', pClass[0].innerHTML)
-//   for(var i =0; i < pClass.length; i++){
-//     pTextArray.push(pClass[i].innerHTML);
-//     console.log(pClass[i].innerHTML)
-//   // console.log("the p tags:", pTags)
-//   let sorted = useSort(pTextArray)
-//   update.push(newOrder)
-//   // let sorted = pTags.sort();
-
-//   // I want to reorder dom elements in array;
-//   }
-//   // console.log("SORTEDDDD:", sorted.length)
-//     // console.log("this is the update:", update)
-//   console.log("this is the unsorted array", pTextArray);
-
-// console.log('this is the update:', update)
-// let elementArray = []
-//   // console.log("this is after sort():", sorted);
-//   var pElements =document.querySelectorAll('.activityTitle');
-//   console.log("this is the pElements", pElements.length)
-// let count = pElements.length
-//   while(count >= 0){
-//     console.log(pElements[count],"Pelementscount")
-//     count--;
-//   }
-  // [].slice.call( pElements ).forEach(function ( element ) {
-  // //   elementArray.push(element)
-  // count = pElements.length
-  // console.log('count', count)
-  // let storage = []
-  // //     if(count > 0){
-  //   while(count > 0){
-  //     storage.push(element.innerHTML)
-  //     count--;
-  //     if(count >= 0){
-  //     storage[i] = update[i];
-  //       console.log("count-->", count)
-  //     console.log(storage,"<----innerHTML")
-  //     let total = storage.length
-  //     console.log(total,'<---total')
-  //     }  
-  //   }
-  // //     // console.log(sorted,"sorted")
-  //   // }
-  //   });
 window.addEventListener('load', function(){
 
   // THIS IS WORKING, BUT IT DOESN'T UPDATE THE OBJECT
   //IT ONLY CHANGES THE TITLES
   let randomButton = document.getElementById('randomize');
-  let randomIds = document.querySelectorAll('.activityId');
-  console.log("randomIds-->", randomIds)
+  let randomURLs = document.querySelectorAll('.activityURL');
+  console.log("randomURLs-->", randomURLs[0].href)
+  console.log('How many randomURLs in array:', randomURLs.length)
   console.log("here is the randomize", randomButton);
 
   randomButton.addEventListener('click', function(){
@@ -131,38 +29,37 @@ window.addEventListener('load', function(){
       this[j] = this[i];
       this[i] = temp;
       console.log("titlesObj[j].innerHTML", titlesObj[i])
-      console.log("temp", temp)
+      console.log("temp", temp.id)
       let tempObj = {};
-      titlesObj[j].innerHTML = tempObj
+      titlesObj[j].innerHTML = temp.innerHTML
       tempObj.tempVal = temp.innerHTML;
-      tempObj.tempId = randomIds[j].id;
-      let url = tempObj.tempId;
-      tempObj.url = url;
+      tempObj.tempId = randomURLs[j].href;
+      let updatedURLs = tempObj.tempId;
+      console.log("HERE is the updatedURLs:", updatedURLs)
+      randomURLs[j].setAttribute('href', temp.id);
+      console.log("this is the length of the randomURLs --->", randomURLs[j].href)
+      console.log("href?-->:", randomURLs[j].href)
+
       console.log("TEMPOBJECT", tempObj)
-  var aTags = "href = /" + url
-  console.log("aTags", aTags)
-      // console.log("tempVal", temp.value)
-      // alert(temp)
+
+      var canvasElement = document.getElementById('canvasElement');
+      var dataURI = canvasElement.toDataURL();
+      console.log("this is the dataURI", dataURI)
+      var context = canvasElement.getContext('2d');
+      let contextColor = context.fillStyle = 'green';
+      let contextFill = context.fillRect (15, 20, 150, 200);
+      // console.log("this is the canvasElement", canvasElement)
+      
+
     }
     console.log("this is this-->", this)
-    console.log("this is the result:", result)
     return this;
   }
-  // console.log("TITLES:", titlesObj)
     console.log("again titles:", titlesInnerHTML) 
     var result = titlesInnerHTML.random();
   });
-    // console.log('result', result)
 });
 
   //THE END 
   //I NEED A WAY TO TARGET THE FULL OBJECT, NOT JUST THE TITLE. 
 
-// console.log("TITLES:", typeof title)
-// console.log("")
-// var items = document.getElementById( 'items' ),
-//     divs = document.getElementsByClassName( 'count' );
-
-// [].slice.call( divs ).forEach(function ( div ) {
-//     div.innerHTML = items.innerHTML;
-// });

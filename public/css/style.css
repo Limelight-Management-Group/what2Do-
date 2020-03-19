@@ -30,6 +30,10 @@ nav{
   font-size: 80px;
   margin-left: 343px;
 }
+#canvasElement{
+  width: 800px;
+  height: 600px;
+}
 
 .h3Heading{
   font-size: 40px;

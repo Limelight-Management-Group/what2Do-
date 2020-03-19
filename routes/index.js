@@ -34,7 +34,8 @@ router.get('/activity', function(req,res){
 
   MongoClient.connect(url, function(err, db){
     if(err){
-    alert('Unable to connect.------->');  
+    console.log('Unable to connect.------->');
+    console.log("heres the err", err)  
     }
     else{
       console.log("connect established successfully! for Get <---------");
@@ -61,7 +62,7 @@ router.get('/activity/:id', function(req,res){
 
   MongoClient.connect(url, function(err, db){
     if(err){
-    alert('Unable to connect.------->');  
+    console.log('Unable to connect.------->');  
   }
    else{
     console.log("connect established successfully! for Get <---------", req.params);
