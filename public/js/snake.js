@@ -19,8 +19,8 @@ class Snake {
     head.x += this.xdir;
     head.y += this.ydir;
     this.body.push(head);
-    console.log("this is the head", head)
-    console.log("this is the length of body", this.body.length)
+    // console.log("this is the head", head)
+    // console.log("this is the length of body", this.body.length)
   }
 
   grow(){

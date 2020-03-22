@@ -41,7 +41,6 @@ router.get('/activity', function(req,res){
       console.log("connect established successfully! for Get <---------");
       var getQueryObject = db.collection('suggestions').find();
       getQueryObject.forEach(function(doc, err){
-        console.log('in the array:', eventsArray.length)
         eventsArray.push(doc);
     },function(){
       db.close();
