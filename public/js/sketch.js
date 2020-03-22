@@ -12,8 +12,8 @@ function setup(){
 for(var i = 0; i < activityOjbects.length; i++){
   var bubbleObject = {};
   bubbleObject = activityOjbects[i];
-  bubbleObject.x = Math.random(0, screen.width);
-  bubbleObject.y = Math.random(0, screen.heightj);
+  bubbleObject.x = random(0, width);
+  bubbleObject.y = random(0, height);
   bubbleObject.display = function(){
     stroke(255);
     noFill();
@@ -23,7 +23,7 @@ for(var i = 0; i < activityOjbects.length; i++){
     this.x = this.x + random(-1, 1);
     this.y = this.y + random(-1, 1);
   }
-  console.log("this is the bubbleObject", bubbleObject);
+  console.log("this is the bubbleObject", bubbleObject.y);
   console.log("added new bubble. Container contains:", bubbleContainer.length)
   bubbleContainer.push(bubbleObject)
 }
